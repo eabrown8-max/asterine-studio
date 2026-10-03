@@ -11,8 +11,8 @@
 <style>
 /* ============================================================
    ASTERINE - asterine.studio
-   Brand: sapphire leads, gold is a real second (cooler, Beth 2026-10-03),
-   rose and plum-gray support; the six Learning Moves colours are spec B2.
+   Brand: sapphire leads; gold lives in the logo and nowhere else on the page
+   (Beth, 2026-10-03: no yellow highlights); rose and plum carry the accents.
    Type: Fraunces (display) + Source Sans 3 (body).
 
    ---- STILL TO FILL IN ----  search FILL-IN
@@ -66,16 +66,16 @@ section{padding-block:4rem}
 .band-surface{background:var(--surface)}
 .band-navy{background:var(--navy);color:var(--on-navy)}
 .band-navy h2{color:var(--on-navy)}
-.band-navy .eyebrow{color:var(--gold-bright)}
+.band-navy .eyebrow{color:#E08AAB}
 .band-navy p,.band-navy li{color:var(--on-navy-soft)}
 .band-navy strong{color:var(--on-navy)}
-.eyebrow{font-family:"Source Sans 3",sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin:0 0 .9rem}
+.eyebrow{font-family:"Source Sans 3",sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--rose);margin:0 0 .9rem}
 .lede{font-size:1.2rem;max-width:var(--measure)}
 .prose{max-width:var(--measure)}
 .quiet{color:var(--plum)}
 
 /* ---------- hero ---------- */
-.hero{background:var(--paper);color:var(--ink);padding-block:2.6rem 3.6rem;border-bottom:4px solid var(--sapphire)}
+.hero{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,var(--sapphire) 130%);color:var(--on-navy);padding-block:3rem 3.6rem}
 .hero .inner{display:grid;gap:2.4rem;align-items:center}
 @media (min-width:800px){.hero .inner{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:3.5rem}}
 .logo{margin:0 0 1.2rem;max-width:34rem}
@@ -83,9 +83,9 @@ section{padding-block:4rem}
 .wordmark{font-size:1.6rem;line-height:1;margin:0;color:var(--on-navy)}
 .wordmark sup{font-size:.26em;font-weight:400;vertical-align:super;letter-spacing:0;color:var(--on-navy-soft)}
 
-.hero h1{font-size:clamp(1.55rem,3.4vw,2.1rem);line-height:1.22;margin:1.6rem 0 .9rem;max-width:30rem;color:var(--sapphire);font-weight:500}
-.hero .lede{color:var(--plum);max-width:32rem}
-.hero-img{justify-self:center;max-width:19rem;width:100%;border:1px solid var(--gold);padding:.45rem;border-radius:4px;background:var(--surface)}
+.hero h1{font-size:clamp(1.55rem,3.4vw,2.1rem);line-height:1.22;margin:1.6rem 0 .9rem;max-width:30rem;color:var(--on-navy);font-weight:500}
+.hero .lede{color:var(--on-navy-soft);max-width:32rem}
+.hero-img{justify-self:center;max-width:19rem;width:100%;border:1px solid rgba(237,232,223,.35);padding:.45rem;border-radius:4px;background:rgba(255,255,255,.05)}
 .hero-img img{border-radius:2px}
 
 /* ---------- buttons ---------- */
@@ -95,13 +95,13 @@ section{padding-block:4rem}
 .btn:hover,.btn:focus-visible{background:var(--sapphire);color:#fff}
 .btn.primary{background:var(--sapphire);color:#fff}
 .btn.primary:hover,.btn.primary:focus-visible{background:var(--navy);border-color:var(--navy)}
-.btn.gold{background:var(--gold-bright);border-color:var(--gold-bright);color:#1F1B16}
-.btn.gold:hover,.btn.gold:focus-visible{background:#E6CC72;border-color:#E6CC72;color:#1F1B16}
+.btn.rose{background:var(--rose);border-color:var(--rose);color:#fff}
+.btn.rose:hover,.btn.rose:focus-visible{background:#8E3C5C;border-color:#8E3C5C;color:#fff}
 .btn.ghost{border-color:rgba(237,232,223,.55);color:var(--on-navy)}
 .btn.ghost:hover,.btn.ghost:focus-visible{background:rgba(237,232,223,.12);color:#fff;border-color:var(--on-navy)}
 .btn.plain{border-color:var(--rule);color:var(--plum)}
 .btn.plain:hover,.btn.plain:focus-visible{background:var(--surface);color:var(--ink);border-color:var(--plum)}
-a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
 
 /* ---------- Sightline band ---------- */
 .steps-wrap{display:grid;gap:2.2rem;align-items:start;margin-top:1.4rem}
@@ -144,13 +144,13 @@ ol.steps p{margin:0;color:var(--plum)}
 /* ---------- Privacy (navy) ---------- */
 ul.ticks{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:.8rem;max-width:var(--measure)}
 ul.ticks li{padding-left:1.6rem;position:relative}
-ul.ticks li::before{content:"";position:absolute;left:0;top:.52em;width:.75rem;height:.75rem;border-radius:50%;background:var(--gold-bright)}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.52em;width:.75rem;height:.75rem;border-radius:50%;background:#E08AAB}
 
 /* ---------- Who we are ---------- */
 .founders{display:grid;gap:2rem;margin-top:2rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
 .founders h3{color:var(--sapphire)}
 .founders p{color:var(--plum);font-size:.98rem;margin:0}
-.portrait{aspect-ratio:4/5;overflow:hidden;border-radius:3px;margin-bottom:1rem;background:var(--surface);max-width:11rem;border-bottom:4px solid var(--gold)}
+.portrait{aspect-ratio:4/5;overflow:hidden;border-radius:3px;margin-bottom:1rem;background:var(--surface);max-width:11rem;border-bottom:4px solid var(--rose)}
 .portrait img{width:100%;height:100%;object-fit:cover;border-radius:0}
 .cite{font-size:.9rem;color:var(--plum-mute);font-style:italic;max-width:var(--measure);margin-top:1.8rem}
 
@@ -158,7 +158,7 @@ ul.ticks li::before{content:"";position:absolute;left:0;top:.52em;width:.75rem;h
 footer{background:var(--navy-deep);color:var(--on-navy-soft);padding-block:2.6rem 3.4rem}
 footer p{font-size:.85rem;max-width:48rem}
 footer .wordmark{font-size:1.6rem;color:var(--on-navy);margin-bottom:.9rem}
-.beta{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-bright);border:1px solid var(--gold-bright);border-radius:2px;padding:.2rem .5rem;margin-bottom:1.1rem}
+.beta{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#CDB9D2;border:1px solid #CDB9D2;border-radius:2px;padding:.2rem .5rem;margin-bottom:1.1rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -167,14 +167,14 @@ footer .wordmark{font-size:1.6rem;color:var(--on-navy);margin-bottom:.9rem}
 <header class="hero">
  <div class="wrap inner">
   <div>
-   <div class="logo"><img class="mark" src="images/logo.png" width="1756" height="887" alt="Asterine - Illuminating the art of teaching"></div>
+   <div class="logo"><img class="mark" src="images/logo-navy.png" width="1756" height="887" alt="Asterine - Illuminating the art of teaching"></div>
    <h1>Professional learning, tools, and expertise built for arts educators.</h1>
    <p class="lede">Asterine supports arts educators across their professional lives—from the classroom to coaching, leadership, and teacher preparation. Sightline, our lesson-analysis tool, offers one place to begin.</p>
    <div class="cta-row">
-    <a class="btn gold" data-cta="training" href="#" target="_blank" rel="noopener">Book a 90-minute training</a>
-    <a class="btn" data-cta="conversation" href="#" target="_blank" rel="noopener">Start a conversation</a>
-    <a class="btn" data-cta="pilot" href="#" target="_blank" rel="noopener">Ask about a pilot</a>
-    <a class="btn" data-cta="app" href="#" target="_blank" rel="noopener">Try Sightline</a>
+    <a class="btn rose" data-cta="training" href="#" target="_blank" rel="noopener">Book a 90-minute training</a>
+    <a class="btn ghost" data-cta="conversation" href="#" target="_blank" rel="noopener">Start a conversation</a>
+    <a class="btn ghost" data-cta="pilot" href="#" target="_blank" rel="noopener">Ask about a pilot</a>
+    <a class="btn ghost" data-cta="app" href="#" target="_blank" rel="noopener">Try Sightline</a>
    </div>
   </div>
   <figure class="hero-img"><img src="images/hero.jpg" width="681" height="1100" alt="Diana Hawley kneeling in a circle of music teachers, arms open, a xylophone in front of her"></figure>
@@ -246,7 +246,7 @@ footer .wordmark{font-size:1.6rem;color:var(--on-navy);margin-bottom:.9rem}
    <li><strong>Your school or district decides</strong> how classroom recordings may be made, used, kept, and deleted under its own policies. We follow those requirements in every pilot.</li>
   </ul>
   <p style="margin-top:1.4rem">Privacy documentation for a district review is available on request.</p>
-  <div class="cta-row"><a class="btn gold" data-cta="conversation" href="#" target="_blank" rel="noopener">Request the privacy documentation</a></div>
+  <div class="cta-row"><a class="btn rose" data-cta="conversation" href="#" target="_blank" rel="noopener">Request the privacy documentation</a></div>
  </div>
 </section>
 
