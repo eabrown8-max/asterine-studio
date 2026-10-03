@@ -78,11 +78,11 @@ section{padding-block:4rem}
 .hero{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,var(--sapphire) 130%);color:var(--on-navy);padding-block:3rem 3.6rem}
 .hero .inner{display:grid;gap:2.4rem;align-items:center}
 @media (min-width:800px){.hero .inner{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:3.5rem}}
-.logo{position:relative;display:inline-block;padding-top:3.4rem;margin-bottom:1.2rem}
-.logo svg{position:absolute;left:-.4rem;top:0;width:min(100%,24rem);height:auto;overflow:visible}
-.wordmark{font-size:clamp(3rem,10vw,4.6rem);line-height:.95;margin:0;color:var(--on-navy);letter-spacing:.01em}
+.logo{margin:0 0 1.2rem;max-width:34rem}
+.logo .mark{display:block;width:100%;height:auto}
+.wordmark{font-size:1.6rem;line-height:1;margin:0;color:var(--on-navy)}
 .wordmark sup{font-size:.26em;font-weight:400;vertical-align:super;letter-spacing:0;color:var(--on-navy-soft)}
-.tagline{margin:.55rem 0 0;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:400;font-size:1.3rem;color:var(--gold-bright)}
+
 .hero h1{font-size:clamp(1.55rem,3.4vw,2.1rem);line-height:1.22;margin:1.6rem 0 .9rem;max-width:30rem;color:var(--on-navy);font-weight:500}
 .hero .lede{color:var(--on-navy-soft);max-width:32rem}
 .hero-img{justify-self:center;max-width:19rem;width:100%;border:1px solid rgba(212,185,90,.55);padding:.45rem;border-radius:4px;background:rgba(255,255,255,.04)}
@@ -160,29 +160,7 @@ footer .wordmark{font-size:1.6rem;color:var(--on-navy);margin-bottom:.9rem}
 <header class="hero">
  <div class="wrap inner">
   <div>
-   <div class="logo">
-    <!-- the celestial mark: a star over the A, four arcs sweeping right, a point of light on each -->
-    <svg viewBox="0 0 440 78" aria-hidden="true" focusable="false">
-      <g fill="none" stroke-linecap="round">
-        <path d="M44 48 C 150 2, 300 2, 430 44" stroke="#D4B95A" stroke-width="1.6"/>
-        <path d="M44 50 C 150 16, 280 14, 395 56" stroke="#EDE8DF" stroke-width="1.5" opacity=".9"/>
-        <path d="M44 52 C 150 30, 262 28, 350 66" stroke="#E08AAB" stroke-width="1.4"/>
-        <path d="M44 54 C 140 42, 236 42, 300 72" stroke="#CDB9D2" stroke-width="1.2" opacity=".85"/>
-      </g>
-      <circle cx="372" cy="12" r="3.2" fill="#D4B95A"/>
-      <circle cx="356" cy="29" r="3" fill="#EDE8DF"/>
-      <circle cx="322" cy="47" r="2.8" fill="#E08AAB"/>
-      <circle cx="286" cy="63" r="2.4" fill="#CDB9D2"/>
-      <g fill="#D4B95A">
-        <path d="M44 4 L48.5 40 L44 78 L39.5 40 Z"/>
-        <path d="M6 48 L44 44.2 L82 48 L44 51.8 Z"/>
-        <path d="M22 26 L46 46 L66 70 L42 50 Z" opacity=".8"/>
-        <path d="M66 26 L42 46 L22 70 L46 50 Z" opacity=".8"/>
-      </g>
-    </svg>
-    <p class="wordmark">Asterine<sup>™</sup></p>
-    <p class="tagline">Illuminating the art of teaching.</p>
-   </div>
+   <div class="logo"><svg class="mark" viewBox="250 40 1400 720" role="img" aria-label="Asterine - Illuminating the art of teaching"><defs><linearGradient id="fade" x1="0" x2="1"><stop offset=".55" stop-opacity="1"/><stop offset="1" stop-opacity=".1"/></linearGradient><mask id="m"><rect x="250" y="0" width="1400" height="760" fill="url(#fade)"/></mask></defs><g fill="none" stroke-linecap="round" mask="url(#m)"><path d="M622 266 Q975 42 1468 440" stroke="#D4B95A" stroke-opacity="1" stroke-width="2.60"/><path d="M622 266 Q993 94 1446 430" stroke="#EDE8DF" stroke-opacity="1" stroke-width="2.35"/><path d="M622 266 Q1011 146 1424 420" stroke="#E08AAB" stroke-opacity="1" stroke-width="2.10"/><path d="M622 266 Q1029 198 1402 410" stroke="#CDB9D2" stroke-opacity="1" stroke-width="1.85"/><path d="M622 266 Q1047 250 1380 400" stroke="#D4B95A" stroke-opacity="0.55" stroke-width="1.60"/></g><circle cx="1036" cy="203" r="8.5" fill="#D4B95A"/><circle cx="1122" cy="251" r="7.5" fill="#EDE8DF"/><circle cx="1178" cy="291" r="7" fill="#E08AAB"/><circle cx="1244" cy="333" r="6" fill="#CDB9D2"/><circle cx="978" cy="284" r="5" fill="#D4B95A"/><circle cx="1120" cy="150" r="2.2" fill="#D4B95A" opacity=".8"/><circle cx="1330" cy="300" r="2.6" fill="#D4B95A" opacity=".8"/><circle cx="1240" cy="250" r="1.8" fill="#D4B95A" opacity=".8"/><circle cx="1420" cy="215" r="2.0" fill="#D4B95A" opacity=".8"/><polygon points="600,122 611,272 600,287 589,272" fill="#D4B95A"/><polygon points="600,406 590,272 600,259 610,272" fill="#D4B95A"/><polygon points="466,272 600,264 613,272 600,280" fill="#D4B95A"/><polygon points="718,272 600,280 588,272 600,264" fill="#D4B95A"/><polygon points="658,214 603,275 594,278 597,269" fill="#D4B95A" opacity=.9/><polygon points="542,214 603,269 606,278 597,275" fill="#D4B95A" opacity=.9/><polygon points="658,330 597,275 594,266 603,269" fill="#D4B95A" opacity=.9/><polygon points="542,330 597,269 606,266 603,275" fill="#D4B95A" opacity=.9/><text x="310" y="610" font-family="Fraunces,Georgia,serif" font-weight="500" font-size="300" textLength="1210" lengthAdjust="spacingAndGlyphs" fill="#EDE8DF">Asterine</text><text x="1544" y="480" font-family="Fraunces,Georgia,serif" font-size="32" fill="#EDE8DF">™</text><text x="915.0" y="700" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-weight="400" font-size="50" letter-spacing="3.4" fill="#D4B95A">Illuminating the art of teaching.</text></svg></div>
    <h1>Professional learning, tools, and expertise built for arts educators.</h1>
    <p class="lede">Asterine works with arts teachers, the coaches and leaders who support them, and the programs that prepare them. Sightline, our lesson-analysis tool, is often where that work starts.</p>
    <div class="cta-row">
