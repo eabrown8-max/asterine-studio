@@ -20,8 +20,8 @@
      2. Company email address
      3. Diana's bio line
      4. The demo video embed
-     7. The arts images (see the Sightline band): generated, in the spirit of
-        Beth's ICON photographs but not the same scenes. Prompts in the photos note.
+     7. (resolved 2026-10-03) The four arts images are generated (Beth made them
+        from the prompts in the photos note); they sit small in the Sightline band.
      5. (resolved 2026-10-03) The tool is SIGHTLINE; Asterine is the
         company. The whole-lesson view inside it is "the whole-lesson
         view" until Beth gives it a plain name.
@@ -205,6 +205,9 @@ figcaption{font-size:.82rem;color:var(--plum-mute);margin-top:.55rem}
 @media (min-width:760px){.steps-wrap{grid-template-columns:minmax(0,1fr) 18rem}}
 .inset{max-width:18rem}
 
+.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:2rem;max-width:52rem}
+@media (min-width:640px){.strip{grid-template-columns:repeat(4,1fr)}}
+.strip img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
 /* ---------- footer ---------- */
 footer{padding-block:2.5rem 3.25rem;border-top:1px solid var(--rule)}
 footer p{font-size:.85rem;color:var(--plum-mute);max-width:46rem}
@@ -269,8 +272,15 @@ footer p{font-size:.85rem;color:var(--plum-mute);max-width:46rem}
   <!-- FILL-IN 7: a studio image. Beth, 2026-10-03: the arts photographs are replaced by
        made-up images in the same spirit, not the same scenes or positions. Prompts in
        Asterine — Landing Page Photos.md. Until then, the slot below. -->
-  <div class="slot inset"><b>Studio image goes here.</b> A visual-art classroom, no faces.</div>
+  <figure class="inset"><img src="images/gen-art.jpg" width="900" height="600" alt="A student drawing a still life at an easel in a sunlit art studio"><figcaption>Sightline works the same way in a studio, a rehearsal, or a music room.</figcaption></figure>
   </div>
+  <div class="strip" aria-label="Arts classrooms">
+    <img src="images/gen-theatre.jpg" width="900" height="600" alt="A theatre student rehearsing a monologue while classmates follow along in their scripts">
+    <img src="images/gen-dance.jpg" width="900" height="600" alt="Dancers mid-phrase in a sunlit studio, seen from behind">
+    <img src="images/gen-music.jpg" width="900" height="600" alt="Two students at an upright piano, a teacher standing beside them">
+    <img src="images/gen-art.jpg" width="900" height="600" alt="Students working at easels in an art studio">
+  </div>
+  <p class="quiet" style="font-size:.82rem;margin:.5rem 0 0;color:var(--plum-mute)">Illustrative images; not photographs of our students.</p>
   <div class="slot"><b>Demo video goes here.</b> Two minutes, one real lesson, coded start to finish.</div>
 </section>
 
