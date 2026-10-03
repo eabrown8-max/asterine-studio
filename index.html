@@ -4,275 +4,210 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Asterine</title>
-<meta name="description" content="Asterine is professional learning, tools, and expertise built for arts educators.">
+<meta name="description" content="Asterine is professional learning, tools, and expertise built for arts educators. Sightline is its lesson-analysis tool.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
 /* ============================================================
-   ASTERINE LANDING PAGE
-   Palette and type are Beth's settled Asterine system
-   (Asterine Spec.md C1-C3). Do not substitute.
+   ASTERINE - asterine.studio
+   Brand: sapphire leads, gold is a real second (cooler, Beth 2026-10-03),
+   rose and plum-gray support; the six Learning Moves colours are spec B2.
+   Type: Fraunces (display) + Source Sans 3 (body).
 
-   ---- THINGS TO FILL IN BEFORE THIS GOES LIVE ----
-   Search for FILL-IN:
-     1. CTA form URL  (one routing Google Form; see the <script> at the foot)
-     2. Company email address
-     3. Diana's bio line
+   ---- STILL TO FILL IN ----  search FILL-IN
+     1. Routing form link (LINKS.FORM at the foot; the pilot form stands in)
+     2. Company email address (footer)
+     3. Diana's bio line (her state role is deliberately off the page)
      4. The demo video embed
-     7. (resolved 2026-10-03) The four arts images are generated (Beth made them
-        from the prompts in the photos note); they sit small in the Sightline band.
-     5. (resolved 2026-10-03) The tool is SIGHTLINE; Asterine is the
-        company. The whole-lesson view inside it is "the whole-lesson
-        view" until Beth gives it a plain name.
-     6. The six moves' group name. "Teaching Moves" is retired (Beth,
-        2026-10-03: half of them are student moves). The page says
-        "the six moves" until the new name is set.
-   Photographs live in images/ (built from Projects/Inputs/Asterine Photos by the
-   crop-and-grade script recorded in Asterine — Landing Page Photos.md).
-   Pricing is deliberately absent (Beth, 2026-10-03: "prices off the page for now").
-   Tagline is "Illuminating the art of teaching." (Beth, 2026-10-03).
-   Moves are "Learning Moves" (Beth, 2026-10-03: "Learning moves are great").
+   Pricing is off the page on purpose (Beth, 2026-10-03).
    ============================================================ */
 
 :root{
-  --paper:#E7E4DC;
-  --surface:#EFEDE7;
-  --ink:#1F1B16;
-  --sapphire:#1A4D9E;   /* deeper, a smidge more navy (Beth, 2026-10-03); was #1F5BB5 */
-  --rose:#A84A6E;
-  --plum-soft:#6B5470;
-  --plum-mute:#9E8AA3;
-  --rule:#CFC9BC;
-  --gold:#A8842C;
-
-  --m-model:#C8412B;
-  --m-scaffold:#2F4B9E;
-  --m-artic-chip:#D98B1F;
-  --m-artic-text:#9E6208;
-  --m-explore:#B8407A;
-  --m-coach:#2E7D5B;
-  --m-reflect:#6B4FA0;
-
-  --measure:34rem;
-  --wide:62rem;
+  --paper:#E7E4DC; --surface:#F1EFE9; --ink:#1F1B16; --rule:#D3CEC2;
+  --sapphire:#1A4D9E; --navy:#143C7E; --navy-deep:#0F2F66;
+  --gold:#B59B3E; --gold-bright:#D4B95A;
+  --rose:#A84A6E; --plum:#6B5470; --plum-mute:#9E8AA3;
+  --on-navy:#EDE8DF; --on-navy-soft:#B9C4DD;
+  --m-model:#AC362C; --m-scaffold:#1769E0; --m-artic:#B07809; --m-explore:#C6439A; --m-coach:#009B5B; --m-reflect:#693597;
+  --measure:36rem; --wide:66rem;
   color-scheme:light dark;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paper:#191714;
-    --surface:#221F1B;
-    --ink:#EDE8DF;
-    --sapphire:#6B9EEE;
-    --rose:#E08AAB;
-    --plum-soft:#CDB9D2;
-    --plum-mute:#95839A;
-    --rule:#36312A;
-    --gold:#C9A557;
-    --m-model:#E8705C;
-    --m-scaffold:#7A91DE;
-    --m-artic-chip:#E0A850;
-    --m-artic-text:#E0A850;
-    --m-explore:#DC7BA8;
-    --m-coach:#5FB08C;
-    --m-reflect:#A389D4;
+    --paper:#151310; --surface:#1D1A16; --ink:#EDE8DF; --rule:#352F27;
+    --sapphire:#6B9EEE; --navy:#122E5E; --navy-deep:#0D2349;
+    --gold:#C9A557; --gold-bright:#D9BF6A; --rose:#E08AAB; --plum:#CDB9D2; --plum-mute:#95839A;
+    --m-model:#B53F02; --m-scaffold:#3A91FE; --m-artic:#BB8922; --m-explore:#BD5EA0; --m-coach:#479668; --m-reflect:#7A47BE;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#191714; --surface:#221F1B; --ink:#EDE8DF;
-  --sapphire:#6B9EEE; --rose:#E08AAB;
-  --plum-soft:#CDB9D2; --plum-mute:#95839A;
-  --rule:#36312A; --gold:#C9A557;
-  --m-model:#E8705C; --m-scaffold:#7A91DE; --m-artic-chip:#E0A850;
-  --m-artic-text:#E0A850; --m-explore:#DC7BA8; --m-coach:#5FB08C; --m-reflect:#A389D4;
+  --paper:#151310; --surface:#1D1A16; --ink:#EDE8DF; --rule:#352F27;
+  --sapphire:#6B9EEE; --navy:#122E5E; --navy-deep:#0D2349;
+  --gold:#C9A557; --gold-bright:#D9BF6A; --rose:#E08AAB; --plum:#CDB9D2; --plum-mute:#95839A;
+  --m-model:#B53F02; --m-scaffold:#3A91FE; --m-artic:#BB8922; --m-explore:#BD5EA0; --m-coach:#479668; --m-reflect:#7A47BE;
 }
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size:1.0625rem;
-  line-height:1.6;
-}
-h1,h2,h3,.wordmark{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:500;text-wrap:balance;letter-spacing:-.01em}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:1.0625rem;line-height:1.6}
+h1,h2,h3,.wordmark{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:500;text-wrap:balance;letter-spacing:-.012em}
+h2{color:var(--sapphire);font-size:clamp(1.6rem,3.6vw,2.15rem);line-height:1.15;margin:0 0 .8rem}
+h3{font-size:1.1rem;margin:0 0 .4rem}
 p{margin:0 0 1rem}
 a{color:var(--sapphire)}
 img{max-width:100%}
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;border-radius:3px}
+figcaption{font-size:.82rem;color:var(--plum-mute);margin-top:.55rem}
 
 .wrap{width:100%;max-width:var(--wide);margin:0 auto;padding-inline:20px}
-section{padding-block:3.25rem}
-section + section{border-top:1px solid var(--rule)}
-.eyebrow{
-  font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;
-  color:var(--plum-mute);margin:0 0 .85rem
-}
-.lede{font-size:1.1875rem;color:var(--ink);max-width:var(--measure)}
+section{padding-block:4rem}
+.band-surface{background:var(--surface)}
+.band-navy{background:var(--navy);color:var(--on-navy)}
+.band-navy h2{color:var(--on-navy)}
+.band-navy .eyebrow{color:var(--gold-bright)}
+.band-navy p,.band-navy li{color:var(--on-navy-soft)}
+.band-navy strong{color:var(--on-navy)}
+.eyebrow{font-family:"Source Sans 3",sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin:0 0 .9rem}
+.lede{font-size:1.2rem;max-width:var(--measure)}
 .prose{max-width:var(--measure)}
-.quiet{color:var(--plum-soft)}
+.quiet{color:var(--plum)}
 
-/* ---------- masthead ---------- */
-header{padding-block:3.5rem 2.75rem}
-.wordmark{
-  font-size:clamp(2.6rem,9vw,4rem);line-height:1;margin:0;
-  color:var(--sapphire);letter-spacing:.015em
-}
-.wordmark sup{font-size:.3em;font-weight:400;vertical-align:super;letter-spacing:0}
-.studio{
-  margin:.6rem 0 0;font-size:.78rem;text-transform:uppercase;letter-spacing:.19em;
-  color:var(--plum-soft)
-}
-.tagline{margin:.75rem 0 0;font-family:Fraunces,Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;font-size:1.2rem;color:var(--plum-soft);letter-spacing:0}
-.rule-gold{width:2.5rem;height:2px;background:var(--gold);border:0;margin:1.6rem 0 1.6rem}
-h1{font-size:clamp(1.6rem,4.6vw,2.2rem);line-height:1.2;margin:0 0 1rem;max-width:30rem}
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,var(--sapphire) 130%);color:var(--on-navy);padding-block:3rem 3.6rem}
+.hero .inner{display:grid;gap:2.4rem;align-items:center}
+@media (min-width:800px){.hero .inner{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:3.5rem}}
+.logo{position:relative;display:inline-block;padding-top:3.4rem;margin-bottom:1.2rem}
+.logo svg{position:absolute;left:-.4rem;top:0;width:min(100%,24rem);height:auto;overflow:visible}
+.wordmark{font-size:clamp(3rem,10vw,4.6rem);line-height:.95;margin:0;color:var(--on-navy);letter-spacing:.01em}
+.wordmark sup{font-size:.26em;font-weight:400;vertical-align:super;letter-spacing:0;color:var(--on-navy-soft)}
+.tagline{margin:.55rem 0 0;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:400;font-size:1.3rem;color:var(--gold-bright)}
+.hero h1{font-size:clamp(1.55rem,3.4vw,2.1rem);line-height:1.22;margin:1.6rem 0 .9rem;max-width:30rem;color:var(--on-navy);font-weight:500}
+.hero .lede{color:var(--on-navy-soft);max-width:32rem}
+.hero-img{justify-self:center;max-width:19rem;width:100%;border:1px solid rgba(212,185,90,.55);padding:.45rem;border-radius:4px;background:rgba(255,255,255,.04)}
+.hero-img img{border-radius:2px}
 
-/* ---------- calls to action ---------- */
-.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.9rem}
-.btn{
-  display:inline-block;font-family:"Source Sans 3",sans-serif;font-size:.95rem;font-weight:600;
-  text-decoration:none;padding:.62rem 1.1rem;border-radius:3px;border:1px solid var(--sapphire);
-  color:var(--sapphire);background:transparent;transition:background .15s,color .15s
-}
-.btn:hover,.btn:focus-visible{background:var(--sapphire);color:var(--paper)}
-.btn.primary{background:var(--sapphire);color:var(--paper)}
-.btn.primary:hover,.btn.primary:focus-visible{background:var(--rose);border-color:var(--rose)}
-.btn.plain{border-color:var(--rule);color:var(--plum-soft)}
-.btn.plain:hover,.btn.plain:focus-visible{background:var(--surface);color:var(--ink);border-color:var(--plum-soft)}
-a:focus-visible,.btn:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+/* ---------- buttons ---------- */
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+.btn{display:inline-block;font-family:"Source Sans 3",sans-serif;font-size:.95rem;font-weight:600;text-decoration:none;padding:.7rem 1.2rem;border-radius:3px;border:1.5px solid var(--sapphire);color:var(--sapphire);background:transparent;transition:background .15s,color .15s,border-color .15s;letter-spacing:.01em}
+.btn:hover,.btn:focus-visible{background:var(--sapphire);color:#fff}
+.btn.primary{background:var(--sapphire);color:#fff}
+.btn.primary:hover,.btn.primary:focus-visible{background:var(--navy);border-color:var(--navy)}
+.btn.gold{background:var(--gold-bright);border-color:var(--gold-bright);color:#1F1B16}
+.btn.gold:hover,.btn.gold:focus-visible{background:#E6CC72;border-color:#E6CC72;color:#1F1B16}
+.btn.ghost{border-color:rgba(237,232,223,.55);color:var(--on-navy)}
+.btn.ghost:hover,.btn.ghost:focus-visible{background:rgba(237,232,223,.12);color:#fff;border-color:var(--on-navy)}
+.btn.plain{border-color:var(--rule);color:var(--plum)}
+.btn.plain:hover,.btn.plain:focus-visible{background:var(--surface);color:var(--ink);border-color:var(--plum)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
-/* ---------- how it works ---------- */
-ol.steps{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:1.4rem}
-ol.steps li{display:grid;grid-template-columns:1.9rem 1fr;gap:.9rem;align-items:start}
-.step-n{
-  font-family:Fraunces,Georgia,serif;font-size:1.25rem;color:var(--rose);line-height:1.25;
-  font-variant-numeric:tabular-nums
-}
-ol.steps h3{margin:0 0 .25rem;font-size:1.0625rem}
-ol.steps p{margin:0;color:var(--plum-soft);max-width:30rem}
-
-/* ---------- teaching moves ---------- */
-.moves{margin:1.9rem 0 0;display:grid;gap:.55rem}
-.move{display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:baseline}
-.chip{
-  font-size:.74rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
-  padding:.2rem .5rem;border-radius:2px;white-space:nowrap;
-  border:1px solid currentColor
-}
-.move p{margin:0;color:var(--plum-soft);font-size:.98rem}
-.m1{color:var(--m-model)} .m2{color:var(--m-scaffold)} .m3{color:var(--m-artic-text)}
-.m4{color:var(--m-explore)} .m5{color:var(--m-coach)} .m6{color:var(--m-reflect)}
-
-/* ---------- audience cards ---------- */
-.cards{display:grid;gap:1.5rem;margin-top:1.9rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
-.card{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:1.4rem 1.3rem 1.3rem;display:flex;flex-direction:column}
-.card h3{margin:0 0 .5rem;font-size:1.0625rem}
-.card p{color:var(--plum-soft);font-size:.98rem}
-.card .btn{align-self:flex-start;margin-top:auto}
-
-/* ---------- lists ---------- */
-ul.ticks{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.7rem;max-width:var(--measure)}
-ul.ticks li{padding-left:1.1rem;position:relative;color:var(--plum-soft)}
-ul.ticks li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--sapphire);border-radius:50%}
-ul.ticks strong{color:var(--ink);font-weight:600}
-
-/* ---------- founders ---------- */
-.founders{display:grid;gap:1.6rem;margin-top:1.6rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
-.founders h3{margin:0 0 .35rem;font-size:1.0625rem}
-.founders p{color:var(--plum-soft);font-size:.98rem;margin:0}
-.cite{font-size:.9rem;color:var(--plum-mute);font-style:italic;max-width:var(--measure);margin-top:1.5rem}
-
-/* ---------- slots the page is waiting on ---------- */
-.slot{
-  border:1px dashed var(--plum-mute);border-radius:4px;padding:1.1rem 1.2rem;
-  color:var(--plum-mute);font-size:.92rem;max-width:var(--measure);margin-top:1.2rem
-}
-.slot b{color:var(--plum-soft)}
-
-
-/* ---------- photographs ---------- */
-figure{margin:0}
-figure img{display:block;width:100%;height:auto;border-radius:4px}
-figcaption{font-size:.82rem;color:var(--plum-mute);margin-top:.55rem}
-.hero{display:grid;gap:2rem;align-items:center}
-@media (min-width:760px){.hero{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:3rem}}
-.hero-img{max-width:19rem;justify-self:start}
-.band-img{margin-top:1.6rem;max-width:34rem}
-.portrait{aspect-ratio:4/5;overflow:hidden;border-radius:4px;margin-bottom:.9rem;background:var(--surface);max-width:11rem}
-.portrait img{width:100%;height:100%;object-fit:cover;border-radius:0}
-.steps-wrap{display:grid;gap:2rem;align-items:start}
-@media (min-width:760px){.steps-wrap{grid-template-columns:minmax(0,1fr) 18rem}}
-.inset{max-width:14rem}
-
-.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:2rem;max-width:40rem}
+/* ---------- Sightline band ---------- */
+.steps-wrap{display:grid;gap:2.2rem;align-items:start;margin-top:1.4rem}
+@media (min-width:800px){.steps-wrap{grid-template-columns:minmax(0,1fr) 15rem}}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:1.5rem;max-width:34rem}
+ol.steps li{display:grid;grid-template-columns:2.2rem 1fr;gap:1rem;align-items:start}
+.step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--sapphire);color:#fff;font-family:Fraunces,Georgia,serif;font-size:1.1rem;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+ol.steps h3{color:var(--sapphire)}
+ol.steps p{margin:0;color:var(--plum)}
+.inset{max-width:15rem}
+.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:2.2rem;max-width:40rem}
 @media (min-width:640px){.strip{grid-template-columns:repeat(4,1fr)}}
 .strip img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
+.slot{border:1px dashed var(--plum-mute);border-radius:4px;padding:1rem 1.2rem;color:var(--plum-mute);font-size:.92rem;max-width:var(--measure);margin-top:1.6rem}
+.slot b{color:var(--plum)}
+
+/* ---------- Learning Moves ---------- */
+.moves{margin:1.6rem 0 0;display:grid;gap:.6rem;max-width:40rem}
+.move{display:grid;grid-template-columns:9.4rem 1fr;gap:.9rem;align-items:center}
+@media (max-width:480px){.move{grid-template-columns:1fr;gap:.25rem}}
+.pill{display:inline-block;color:#fff;font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:.42rem .75rem;border-radius:3px;text-align:center}
+.move p{margin:0;color:var(--plum);font-size:1rem}
+.pill.m1{background:var(--m-model)} .pill.m2{background:var(--m-scaffold)} .pill.m3{background:var(--m-artic)}
+.pill.m4{background:var(--m-explore)} .pill.m5{background:var(--m-coach)} .pill.m6{background:var(--m-reflect)}
+
+/* ---------- Who it's for ---------- */
+.band-img{margin-top:1.6rem;max-width:36rem}
+.cards{display:grid;gap:1.3rem;margin-top:2rem;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr))}
+.card{background:var(--surface);border-top:4px solid var(--sapphire);border-radius:3px;padding:1.5rem 1.35rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 1px 0 var(--rule)}
+.card h3{color:var(--sapphire)}
+.card p{color:var(--plum);font-size:.98rem}
+.card .btn{align-self:flex-start;margin-top:auto}
+
+/* ---------- Privacy (navy) ---------- */
+ul.ticks{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:.8rem;max-width:var(--measure)}
+ul.ticks li{padding-left:1.6rem;position:relative}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.52em;width:.75rem;height:.75rem;border-radius:50%;background:var(--gold-bright)}
+
+/* ---------- Who we are ---------- */
+.founders{display:grid;gap:2rem;margin-top:2rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.founders h3{color:var(--sapphire)}
+.founders p{color:var(--plum);font-size:.98rem;margin:0}
+.portrait{aspect-ratio:4/5;overflow:hidden;border-radius:3px;margin-bottom:1rem;background:var(--surface);max-width:11rem;border-bottom:4px solid var(--gold)}
+.portrait img{width:100%;height:100%;object-fit:cover;border-radius:0}
+.cite{font-size:.9rem;color:var(--plum-mute);font-style:italic;max-width:var(--measure);margin-top:1.8rem}
+
 /* ---------- footer ---------- */
-footer{padding-block:2.5rem 3.25rem;border-top:1px solid var(--rule)}
-footer p{font-size:.85rem;color:var(--plum-mute);max-width:46rem}
-.beta{
-  display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.13em;
-  color:var(--rose);border:1px solid var(--rose);border-radius:2px;padding:.16rem .45rem;margin-bottom:1.2rem
-}
+footer{background:var(--navy-deep);color:var(--on-navy-soft);padding-block:2.6rem 3.4rem}
+footer p{font-size:.85rem;max-width:48rem}
+footer .wordmark{font-size:1.6rem;color:var(--on-navy);margin-bottom:.9rem}
+.beta{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-bright);border:1px solid var(--gold-bright);border-radius:2px;padding:.2rem .5rem;margin-bottom:1.1rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
-<header class="wrap hero">
- <div>
-  <p class="wordmark">Asterine<sup>™</sup></p>
-  <p class="tagline">Illuminating the art of teaching.</p>
-  <hr class="rule-gold">
-  <h1>Professional learning, tools, and expertise built for arts educators.</h1>
-  <p class="lede">Asterine works with arts teachers, the coaches and leaders who support them, and the programs that prepare them. Sightline, our lesson-analysis tool, is often where that work starts.</p>
-  <div class="cta-row">
-    <a class="btn primary" data-cta="training" href="#">Book a 90-minute training</a>
-    <a class="btn" data-cta="conversation" href="#">Start a conversation</a>
-    <a class="btn" data-cta="pilot" href="#">Ask about a pilot</a>
-    <a class="btn plain" data-cta="app" href="#">Try Sightline</a>
+<header class="hero">
+ <div class="wrap inner">
+  <div>
+   <div class="logo">
+    <!-- the celestial mark: a star over the A, four arcs sweeping right, a point of light on each -->
+    <svg viewBox="0 0 440 78" aria-hidden="true" focusable="false">
+      <g fill="none" stroke-linecap="round">
+        <path d="M44 48 C 150 2, 300 2, 430 44" stroke="#D4B95A" stroke-width="1.6"/>
+        <path d="M44 50 C 150 16, 280 14, 395 56" stroke="#EDE8DF" stroke-width="1.5" opacity=".9"/>
+        <path d="M44 52 C 150 30, 262 28, 350 66" stroke="#E08AAB" stroke-width="1.4"/>
+        <path d="M44 54 C 140 42, 236 42, 300 72" stroke="#CDB9D2" stroke-width="1.2" opacity=".85"/>
+      </g>
+      <circle cx="372" cy="12" r="3.2" fill="#D4B95A"/>
+      <circle cx="356" cy="29" r="3" fill="#EDE8DF"/>
+      <circle cx="322" cy="47" r="2.8" fill="#E08AAB"/>
+      <circle cx="286" cy="63" r="2.4" fill="#CDB9D2"/>
+      <g fill="#D4B95A">
+        <path d="M44 4 L48.5 40 L44 78 L39.5 40 Z"/>
+        <path d="M6 48 L44 44.2 L82 48 L44 51.8 Z"/>
+        <path d="M22 26 L46 46 L66 70 L42 50 Z" opacity=".8"/>
+        <path d="M66 26 L42 46 L22 70 L46 50 Z" opacity=".8"/>
+      </g>
+    </svg>
+    <p class="wordmark">Asterine<sup>™</sup></p>
+    <p class="tagline">Illuminating the art of teaching.</p>
+   </div>
+   <h1>Professional learning, tools, and expertise built for arts educators.</h1>
+   <p class="lede">Asterine works with arts teachers, the coaches and leaders who support them, and the programs that prepare them. Sightline, our lesson-analysis tool, is often where that work starts.</p>
+   <div class="cta-row">
+    <a class="btn gold" data-cta="training" href="#">Book a 90-minute training</a>
+    <a class="btn ghost" data-cta="conversation" href="#">Start a conversation</a>
+    <a class="btn ghost" data-cta="pilot" href="#">Ask about a pilot</a>
+    <a class="btn ghost" data-cta="app" href="#">Try Sightline</a>
+   </div>
   </div>
+  <figure class="hero-img"><img src="images/hero.jpg" width="681" height="1100" alt="Diana Hawley kneeling in a circle of music teachers, arms open, a xylophone in front of her"></figure>
  </div>
- <figure class="hero-img"><img src="images/hero.jpg" width="681" height="1100" alt="Diana Hawley kneeling in a circle of music teachers, arms open, a xylophone in front of her"></figure>
 </header>
 
-<section class="wrap">
+<section>
+ <div class="wrap">
   <p class="eyebrow">Sightline</p>
-  <h2 class="prose" style="margin:0 0 .6rem;font-size:1.45rem">You look closely at one of your own lessons.</h2>
-  <p class="prose quiet">Sightline takes a lesson you have already taught and helps you examine it move by move. Everything happens on your own computer.</p>
-
+  <h2>You look closely at one of your own lessons.</h2>
+  <p class="lede quiet">Sightline takes a lesson you have already taught and helps you examine it move by move. Everything happens on your own computer.</p>
   <div class="steps-wrap">
-  <ol class="steps">
-    <li>
-      <span class="step-n">1</span>
-      <div>
-        <h3>Bring in a lesson</h3>
-        <p>A video, an audio file, or a transcript you already have. Transcription and speaker labelling run in your browser, on your machine. It does not record for you and never asks for your microphone.</p>
-      </div>
-    </li>
-    <li>
-      <span class="step-n">2</span>
-      <div>
-        <h3>Code what you see</h3>
-        <p>Work down the transcript and tag each moment with the Learning Move it shows. The definitions stay beside you while you work.</p>
-      </div>
-    </li>
-    <li>
-      <span class="step-n">3</span>
-      <div>
-        <h3>See the pattern</h3>
-        <p>The whole-lesson view lays every move out across the lesson, so you can see what you lean on and what rarely appears. Counterpoint offers a second reading of the same moments to compare with your own.</p>
-      </div>
-    </li>
-  </ol>
-
-  <!-- FILL-IN 4: the two-minute demo video. Diana is making it.
-       Replace this whole .slot block with the embed when it exists. -->
-  <!-- FILL-IN 7: a studio image. Beth, 2026-10-03: the arts photographs are replaced by
-       made-up images in the same spirit, not the same scenes or positions. Prompts in
-       Asterine — Landing Page Photos.md. Until then, the slot below. -->
-  <figure class="inset"><img src="images/gen-art.jpg" width="900" height="600" alt="A student drawing a still life at an easel in a sunlit art studio"><figcaption>Sightline works the same way in a studio, a rehearsal, or a music room.</figcaption></figure>
+   <ol class="steps">
+    <li><span class="step-n">1</span><div><h3>Bring in a lesson</h3><p>A video, an audio file, or a transcript you already have. Transcription and speaker labelling run in your browser, on your machine. It does not record for you and never asks for your microphone.</p></div></li>
+    <li><span class="step-n">2</span><div><h3>Code what you see</h3><p>Work down the transcript and tag each moment with the Learning Move it shows. The definitions stay beside you while you work.</p></div></li>
+    <li><span class="step-n">3</span><div><h3>See the pattern</h3><p>The whole-lesson view lays every move out across the lesson, so you can see what you lean on and what rarely appears. Counterpoint offers a second reading of the same moments to compare with your own.</p></div></li>
+   </ol>
+   <figure class="inset"><img src="images/gen-art.jpg" width="900" height="600" alt="A student drawing a still life at an easel in a sunlit art studio"><figcaption>Sightline works the same way in a studio, a rehearsal, or a music room.</figcaption></figure>
   </div>
   <div class="strip" aria-label="Arts classrooms">
     <img src="images/gen-theatre.jpg" width="900" height="600" alt="A theatre student rehearsing a monologue while classmates follow along in their scripts">
@@ -281,171 +216,117 @@ footer p{font-size:.85rem;color:var(--plum-mute);max-width:46rem}
     <img src="images/gen-art.jpg" width="900" height="600" alt="Students working at easels in an art studio">
   </div>
   <p class="quiet" style="font-size:.82rem;margin:.5rem 0 0;color:var(--plum-mute)">Illustrative images; not photographs of our students.</p>
+  <!-- FILL-IN 4: the two-minute demo video. Replace the slot with the embed. -->
   <div class="slot"><b>Demo video goes here.</b> Two minutes, one real lesson, coded start to finish.</div>
+ </div>
 </section>
 
-<section class="wrap">
+<section class="band-surface">
+ <div class="wrap">
   <p class="eyebrow">The six Learning Moves</p>
-  <h2 class="prose" style="margin:0 0 .6rem;font-size:1.45rem">The framework is cognitive apprenticeship, applied to an arts classroom.</h2>
-  <p class="prose quiet">Six Learning Moves, each with a working definition. Three are things the teacher does and three are things students do. The same six are the vocabulary of the training, the tool, and the conversation afterward.</p>
+  <h2>Cognitive apprenticeship, applied to an arts classroom.</h2>
+  <p class="lede quiet">Six moves, each with a working definition. Three are things the teacher does and three are things students do. The same six are the vocabulary of the training, the tool, and the conversation afterward.</p>
   <div class="moves">
-    <div class="move"><span class="chip m1">Modeling</span><p>Teacher artfully demonstrates artistic materials and processes.</p></div>
-    <div class="move"><span class="chip m2">Scaffolding</span><p>Teacher provides supports in student learning.</p></div>
-    <div class="move"><span class="chip m3">Articulation</span><p>Students communicate their understanding.</p></div>
-    <div class="move"><span class="chip m4">Exploration</span><p>Students use artistic materials in new ways.</p></div>
-    <div class="move"><span class="chip m5">Coaching</span><p>Teacher provides customized feedback during learning.</p></div>
-    <div class="move"><span class="chip m6">Reflection</span><p>Students examine their process and product.</p></div>
+   <div class="move"><span class="pill m1">Modeling</span><p>Teacher artfully demonstrates artistic materials and processes.</p></div>
+   <div class="move"><span class="pill m2">Scaffolding</span><p>Teacher provides supports in student learning.</p></div>
+   <div class="move"><span class="pill m3">Articulation</span><p>Students communicate their understanding.</p></div>
+   <div class="move"><span class="pill m4">Exploration</span><p>Students use artistic materials in new ways.</p></div>
+   <div class="move"><span class="pill m5">Coaching</span><p>Teacher provides customized feedback during learning.</p></div>
+   <div class="move"><span class="pill m6">Reflection</span><p>Students examine their process and product.</p></div>
   </div>
+ </div>
 </section>
 
-<section class="wrap">
+<section>
+ <div class="wrap">
   <p class="eyebrow">Who it's for</p>
-  <h2 class="prose" style="margin:0 0 .6rem;font-size:1.45rem">Four ways in.</h2>
-  <figure class="band-img"><img src="images/wide.jpg" width="1100" height="826" alt="Beth Brown and Diana Hawley teaching a session for music educators, a whiteboard of descriptive words between them, teachers seated on the floor"><figcaption>Teaching a session for music educators at a national Orff Schulwerk conference.</figcaption></figure>
+  <h2>Four ways in.</h2>
+  <figure class="band-img"><img src="images/wide.jpg" width="1100" height="825" alt="Beth Brown and Diana Hawley teaching a session for music educators, a whiteboard of descriptive words between them, teachers seated on the floor"><figcaption>Teaching a session for music educators at a national Orff Schulwerk conference.</figcaption></figure>
   <div class="cards">
-    <div class="card">
-      <h3>Arts teachers</h3>
-      <p>You may be the only arts teacher in your building, with nobody down the hall who teaches what you teach. Sightline gives you a way to look hard at one of your own lessons and compare your reading of it against another.</p>
-      <a class="btn plain" data-cta="app" href="#">Try Sightline</a>
-    </div>
-    <div class="card">
-      <h3>Coaches and professional learning leaders</h3>
-      <p>A 90-minute session introduces the framework and the tool to a team. Teachers code the same short moments and then compare their decisions, which builds a shared vocabulary across a department or a district.</p>
-      <a class="btn" data-cta="training" href="#">Book a 90-minute training</a>
-    </div>
-    <div class="card">
-      <h3>School and district leaders</h3>
-      <p>Arts and related-arts staff rarely get professional development built for their own discipline. This gives them a specific, documented focus for the year, and the recordings stay on the teacher's device.</p>
-      <a class="btn" data-cta="conversation" href="#">Start a conversation</a>
-    </div>
-    <div class="card">
-      <h3>Teacher-education programs</h3>
-      <p>Use Sightline in methods courses, student teaching, and supervision, so a candidate and an instructor can examine the same rehearsal or lesson together. A research-use option is available for faculty.</p>
-      <a class="btn" data-cta="pilot" href="#">Ask about a pilot</a>
-    </div>
+   <div class="card"><h3>Arts teachers</h3><p>You may be the only arts teacher in your building, with nobody down the hall who teaches what you teach. Sightline gives you a way to look hard at one of your own lessons and compare your reading of it against another.</p><a class="btn plain" data-cta="app" href="#">Try Sightline</a></div>
+   <div class="card"><h3>Coaches and professional learning leaders</h3><p>A 90-minute session introduces the framework and the tool to a team. Teachers code the same short moments and then compare their decisions, which builds a shared vocabulary across a department or a district.</p><a class="btn primary" data-cta="training" href="#">Book a 90-minute training</a></div>
+   <div class="card"><h3>School and district leaders</h3><p>Arts and related-arts staff rarely get professional development built for their own discipline. This gives them a specific, documented focus for the year, and the recordings stay on the teacher's device.</p><a class="btn" data-cta="conversation" href="#">Start a conversation</a></div>
+   <div class="card"><h3>Teacher-education programs</h3><p>Use Sightline in methods courses, student teaching, and supervision, so a candidate and an instructor can examine the same rehearsal or lesson together. A research-use option is available for faculty.</p><a class="btn" data-cta="pilot" href="#">Ask about a pilot</a></div>
   </div>
+ </div>
 </section>
 
-<section class="wrap">
+<section class="band-navy">
+ <div class="wrap">
   <p class="eyebrow">Privacy</p>
-  <h2 class="prose" style="margin:0 0 .6rem;font-size:1.45rem">The lesson stays on your computer.</h2>
+  <h2>The lesson stays on your computer.</h2>
   <ul class="ticks">
-    <li><strong>Transcription and analysis run in your browser.</strong> The audio and video are processed on your own machine, not on a server.</li>
-    <li><strong>Recordings, transcripts, and codings are not uploaded.</strong> They stay in your browser's storage on that device until you delete them.</li>
-    <li><strong>No student accounts, no student roster, and no student names</strong> are collected by Asterine.</li>
-    <li><strong>During the private beta,</strong> the only information this site sends is the name and date of each tester who accepts the beta terms.</li>
-    <li><strong>Your school or district decides</strong> how classroom recordings may be made, used, kept, and deleted under its own policies. We follow those requirements in every pilot.</li>
+   <li><strong>Transcription and analysis run in your browser.</strong> The audio and video are processed on your own machine, not on a server.</li>
+   <li><strong>Recordings, transcripts, and codings are not uploaded.</strong> They stay in your browser's storage on that device until you delete them.</li>
+   <li><strong>No student accounts, no student roster, and no student names</strong> are collected by Asterine.</li>
+   <li><strong>During the private beta,</strong> the only information this site sends is the name and date of each tester who accepts the beta terms.</li>
+   <li><strong>Your school or district decides</strong> how classroom recordings may be made, used, kept, and deleted under its own policies. We follow those requirements in every pilot.</li>
   </ul>
-  <p class="prose quiet" style="margin-top:1.3rem">Privacy documentation for a district review is available on request.</p>
-  <div class="cta-row">
-    <a class="btn" data-cta="conversation" href="#">Request the privacy documentation</a>
-  </div>
+  <p style="margin-top:1.4rem">Privacy documentation for a district review is available on request.</p>
+  <div class="cta-row"><a class="btn gold" data-cta="conversation" href="#">Request the privacy documentation</a></div>
+ </div>
 </section>
 
-<section class="wrap">
+<section>
+ <div class="wrap">
   <p class="eyebrow">Who we are</p>
-  <h2 class="prose" style="margin:0 0 .6rem;font-size:1.45rem">Two arts educators who kept asking the same question.</h2>
+  <h2>Two arts educators who kept asking the same question.</h2>
   <figure class="band-img" style="max-width:26rem"><img src="images/founders.jpg" width="1100" height="794" alt="Diana Hawley and Beth Brown side by side in front of a projected slide of rhythm patterns"></figure>
-  <p class="prose quiet">Our mission is to sustain arts education by supporting the people who make it possible: the teachers in arts classrooms and the coaches, administrators, and teacher educators who support them. Making art is deeply human, embodied and shared, and a way communities come to know themselves.</p>
+  <p class="prose quiet" style="margin-top:1.6rem">Our mission is to sustain arts education by supporting the people who make it possible: the teachers in arts classrooms and the coaches, administrators, and teacher educators who support them. Making art is deeply human, embodied and shared, and a way communities come to know themselves.</p>
   <p class="prose quiet">Asterine works alongside teachers, schools, districts, and teacher-education programs to strengthen instruction, design arts programs, develop curriculum and assessment, and build classroom culture, within the time, budgets, and staffing schools actually have. Sightline is one part of that work.</p>
-
   <div class="founders">
-    <div>
-      <div class="portrait"><img src="images/beth-headshot.jpg" width="720" height="900" alt="Dr. Elizabeth Brown"></div>
-      <h3>Dr. Elizabeth Brown</h3>
-      <p>Twenty-five years teaching music in public schools, Academic Provost of a 6-12 performing and visual arts school, and an adjunct instructor in instructional design at the University of Iowa. PhD in educational psychology, with an emphasis in developmental science and statistics.</p>
-    </div>
-    <div>
-      <div class="portrait"><img src="images/diana-headshot.jpg" width="720" height="900" alt="Dr. Diana Hawley"></div>
-      <h3>Dr. Diana Hawley</h3>
-      <!-- FILL-IN 3: Diana's bio line, for her to write or approve.
-           Her current state role is deliberately left off this page
-           until her conversation with her employer about co-ownership
-           has happened. Do not add it before then. -->
-      <p>DMA. Decades in arts education as a teacher, clinician, and adjunct instructor across nine appointments, with a long record of presenting and workshop facilitation in music education.</p>
-    </div>
+   <div>
+    <div class="portrait"><img src="images/beth-headshot.jpg" width="720" height="900" alt="Dr. Elizabeth Brown"></div>
+    <h3>Dr. Elizabeth Brown</h3>
+    <p>Twenty-five years teaching music in public schools, Academic Provost of a 6-12 performing and visual arts school, and an adjunct instructor in instructional design at the University of Iowa. PhD in educational psychology, with an emphasis in developmental science and statistics.</p>
+   </div>
+   <div>
+    <div class="portrait"><img src="images/diana-headshot.jpg" width="720" height="900" alt="Dr. Diana Hawley"></div>
+    <h3>Dr. Diana Hawley</h3>
+    <!-- FILL-IN 3: Diana's bio line, for her to write or approve. Her state role stays off this page until her employer conversation has happened. -->
+    <p>DMA. Decades in arts education as a teacher, clinician, and adjunct instructor across nine appointments, with a long record of presenting and workshop facilitation in music education.</p>
+   </div>
   </div>
-
   <p class="cite">The framework Sightline codes is our own, in print since 2020: Brown, B., &amp; Hawley, D. (2020). Facilitating music making through cognitive apprenticeship in the Orff Schulwerk tradition. <em>The Orff Echo, 52</em>(2), 22-26.</p>
+ </div>
 </section>
 
-<section class="wrap">
+<section class="band-surface">
+ <div class="wrap">
   <p class="eyebrow">What it costs</p>
-  <h2 class="prose" style="margin:0 0 .6rem;font-size:1.45rem">Licenses by teacher, school, district, or program. Professional development by the day.</h2>
-  <p class="prose quiet">We are setting the final structure now. Ask and we will send you current pricing and everything a school needs to make a decision.</p>
-  <!-- Prices are deliberately not printed here. They are still an open
-       decision in the business plan, and the first number a district sees
-       is the number it will hold you to. Put them on the page once the
-       two of you have settled them. -->
-  <div class="cta-row">
-    <a class="btn primary" data-cta="conversation" href="#">Ask for pricing</a>
-  </div>
+  <h2>Licenses by teacher, school, district, or program. Professional development by the day.</h2>
+  <p class="lede quiet">We are setting the final structure now. Ask and we will send you current pricing and everything a school needs to make a decision.</p>
+  <!-- Prices are deliberately not printed here (Beth, 2026-10-03). -->
+  <div class="cta-row"><a class="btn primary" data-cta="conversation" href="#">Ask for pricing</a></div>
+ </div>
 </section>
 
-<footer class="wrap">
+<footer>
+ <div class="wrap">
+  <p class="wordmark">Asterine<sup>™</sup></p>
   <span class="beta">Private beta</span>
   <p>Sightline is in private beta. Access is by invitation while we work with a small group of teachers and programs.</p>
   <p>&copy; 2026 Dr. Elizabeth Brown and Dr. Diana Hawley. All rights reserved. Asterine&trade;, Sightline&trade; and their associated color-coded instructional analysis workflows are trademarks of Dr. Elizabeth Brown and Dr. Diana Hawley.</p>
-  <!-- FILL-IN 2: company email address. A mailto link belongs here once
-       there is an address at the company domain. -->
+  <!-- FILL-IN 2: company email address, as a mailto link, once it exists at asterine.studio. -->
+ </div>
 </footer>
 
 <script>
-/* ============================================================
-   WHERE THE BUTTONS GO
-
-   FILL-IN 1. Every call to action on this page routes through
-   this one block, so there is exactly one place to edit.
-
-   The recommendation is ONE Google Form with a routing question,
-   not four forms. Fields:
-
-     - First name, Last name, Email
-     - Role            (Arts teacher / Coach or PD leader /
-                        Administrator / University faculty / Other)
-     - School or organization, and its town
-     - What are you interested in?  (A conversation about what you offer /
-                        A 90-minute training for our team /
-                        A pilot this semester / Just trying the tool)
-     - Anything else we should know   (paragraph)
-
-   Then paste that form's link into FORM below and delete the
-   three per-button overrides unless you want separate forms.
-   ============================================================ */
-
+/* FILL-IN 1: every call to action routes through this block. ONE Google Form with a
+   routing question (fields listed in Asterine — Who We're Reaching.md). The
+   pilot-interest form stands in until then. */
 var LINKS = {
-  // One routing form for every button. REPLACE THIS.
-  // STOPGAP (2026-10-03): the pilot-interest form stands in until the routing form
-  // exists in the Workspace account. Replace with that form's link. FILL-IN 1.
-  FORM:         "https://forms.gle/HoWFyDa33VHLWf3BA",
-
-  // Already live, from the Asterine beta gate. Leave as is.
-  pilot:        "https://forms.gle/HoWFyDa33VHLWf3BA",
-
-  // The app itself. Shows the beta gate, which offers the pilot
-  // form to anyone without an access code.
-  app:          "https://sightline.asterine.studio/"
+  FORM:  "https://forms.gle/HoWFyDa33VHLWf3BA",      // STOPGAP: the pilot-interest form; replace with the routing form
+  pilot: "https://forms.gle/HoWFyDa33VHLWf3BA",
+  app:   "https://sightline.asterine.studio/"
 };
-
 (function () {
-  var map = {
-    training:     LINKS.FORM,
-    conversation: LINKS.FORM,
-    pilot:        LINKS.pilot,
-    app:          LINKS.app
-  };
+  var map = { training: LINKS.FORM, conversation: LINKS.FORM, pilot: LINKS.pilot, app: LINKS.app };
   var nodes = document.querySelectorAll("[data-cta]");
   for (var i = 0; i < nodes.length; i++) {
     var a = nodes[i], url = map[a.getAttribute("data-cta")];
-    if (!url || url.indexOf("FILL-IN") === 0) {
-      a.setAttribute("href", "#");
-      a.setAttribute("aria-disabled", "true");
-      a.title = "This button has no destination yet.";
-      continue;
-    }
-    a.setAttribute("href", url);
-    a.setAttribute("target", "_blank");
-    a.setAttribute("rel", "noopener");
+    if (!url || url.indexOf("FILL-IN") === 0) { a.setAttribute("href", "#"); a.setAttribute("aria-disabled", "true"); a.title = "This button has no destination yet."; continue; }
+    a.setAttribute("href", url); a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
   }
 })();
 </script>
