@@ -90,6 +90,7 @@ section{padding-block:4rem}
 
 /* ---------- buttons ---------- */
 .cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+@media (min-width:1100px){.hero .cta-row{flex-wrap:nowrap}.hero .btn{padding:.65rem .95rem;font-size:.9rem;white-space:nowrap}}
 .btn{display:inline-block;font-family:"Source Sans 3",sans-serif;font-size:.95rem;font-weight:600;text-decoration:none;padding:.7rem 1.2rem;border-radius:3px;border:1.5px solid var(--sapphire);color:var(--sapphire);background:transparent;transition:background .15s,color .15s,border-color .15s;letter-spacing:.01em}
 .btn:hover,.btn:focus-visible{background:var(--sapphire);color:#fff}
 .btn.primary{background:var(--sapphire);color:#fff}
@@ -104,7 +105,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:
 
 /* ---------- Sightline band ---------- */
 .steps-wrap{display:grid;gap:2.2rem;align-items:start;margin-top:1.4rem}
-@media (min-width:800px){.steps-wrap{grid-template-columns:minmax(0,1fr) 15rem}}
+@media (min-width:800px){.steps-wrap{grid-template-columns:minmax(0,1fr) 24rem}}
+.quad{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+.quad img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
 ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:1.5rem;max-width:34rem}
 ol.steps li{display:grid;grid-template-columns:2.2rem 1fr;gap:1rem;align-items:start}
 .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--sapphire);color:#fff;font-family:Fraunces,Georgia,serif;font-size:1.1rem;display:grid;place-items:center;font-variant-numeric:tabular-nums}
@@ -128,7 +131,11 @@ ol.steps p{margin:0;color:var(--plum)}
 
 /* ---------- Who it's for ---------- */
 .band-img{margin-top:1.6rem;max-width:36rem}
-.cards{display:grid;gap:1.3rem;margin-top:2rem;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr))}
+.pair{display:grid;gap:1.2rem;margin-top:1.6rem;max-width:40rem;grid-template-columns:1fr}
+@media (min-width:640px){.pair{grid-template-columns:3fr 2fr;align-items:end}}
+.cards{display:grid;gap:1.1rem;margin-top:2rem;grid-template-columns:1fr}
+@media (min-width:560px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.cards{grid-template-columns:repeat(4,1fr)}}
 .card{background:var(--surface);border-top:4px solid var(--sapphire);border-radius:3px;padding:1.5rem 1.35rem 1.4rem;display:flex;flex-direction:column;box-shadow:0 1px 0 var(--rule)}
 .card h3{color:var(--sapphire)}
 .card p{color:var(--plum);font-size:.98rem}
@@ -185,15 +192,13 @@ footer .wordmark{font-size:1.6rem;color:var(--on-navy);margin-bottom:.9rem}
     <li><span class="step-n">2</span><div><h3>Code what you see</h3><p>Work down the transcript and tag each moment with the Learning Move it shows. The definitions stay beside you while you work.</p></div></li>
     <li><span class="step-n">3</span><div><h3>See the pattern</h3><p>The whole-lesson view lays every move out across the lesson, so you can see what you lean on and what rarely appears. Counterpoint offers a second reading of the same moments to compare with your own.</p></div></li>
    </ol>
-   <figure class="inset"><img src="images/gen-art.jpg" width="900" height="600" alt="A student drawing a still life at an easel in a sunlit art studio"><figcaption>Sightline works the same way in a studio, a rehearsal, or a music room.</figcaption></figure>
-  </div>
-  <div class="strip" aria-label="Arts classrooms">
+   <div class="quad" aria-label="Arts classrooms">
     <img src="images/gen-theatre.jpg" width="900" height="600" alt="A theatre student rehearsing a monologue while classmates follow along in their scripts">
     <img src="images/gen-dance.jpg" width="900" height="600" alt="Dancers mid-phrase in a sunlit studio, seen from behind">
     <img src="images/gen-music.jpg" width="900" height="600" alt="Two students at an upright piano, a teacher standing beside them">
-    <img src="images/gen-art.jpg" width="900" height="600" alt="Students working at easels in an art studio">
+    <img src="images/gen-art.jpg" width="900" height="600" alt="A student drawing a still life at an easel in a sunlit art studio">
+   </div>
   </div>
-  <p class="quiet" style="font-size:.82rem;margin:.5rem 0 0;color:var(--plum-mute)">Illustrative images; not photographs of our students.</p>
   <!-- FILL-IN 4: the two-minute demo video. Replace the slot with the embed. -->
   <div class="slot"><b>Demo video goes here.</b> Two minutes, one real lesson, coded start to finish.</div>
  </div>
@@ -249,7 +254,10 @@ footer .wordmark{font-size:1.6rem;color:var(--on-navy);margin-bottom:.9rem}
  <div class="wrap">
   <p class="eyebrow">Who we are</p>
   <h2>Two arts educators who kept asking the same question.</h2>
-  <figure class="band-img" style="max-width:26rem"><img src="images/founders.jpg" width="1100" height="794" alt="Diana Hawley and Beth Brown side by side in front of a projected slide of rhythm patterns"></figure>
+  <div class="pair">
+   <figure><img src="images/founders.jpg" width="1100" height="794" alt="Diana Hawley and Beth Brown side by side in front of a projected slide of rhythm patterns"><figcaption>Teaching together.</figcaption></figure>
+   <figure><img src="images/journey.jpg" width="680" height="900" alt="Beth Brown and Diana Hawley standing together in a conference hall, presenter badges on, xylophones on the floor behind them"><figcaption>When we started our professional journey together.</figcaption></figure>
+  </div>
   <p class="prose quiet" style="margin-top:1.6rem">Our mission is to sustain arts education by supporting the people who make it possible: the teachers in arts classrooms and the coaches, administrators, and teacher educators who support them. Making art is deeply human, embodied and shared, and a way communities come to know themselves.</p>
   <p class="prose quiet">Asterine works alongside teachers, schools, districts, and teacher-education programs to strengthen instruction, design arts programs, develop curriculum and assessment, and build classroom culture, within the time, budgets, and staffing schools actually have. Sightline is one part of that work.</p>
   <div class="founders">
